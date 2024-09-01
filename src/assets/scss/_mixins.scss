@@ -1,0 +1,42 @@
+@function breakpoints($breakpoint) {
+  @return map-get($grid-breakpoints, $breakpoint);
+}
+
+$grid-breakpoints: (
+  xs: 481px,
+  sm: 768px,
+  md: 992px,
+  lg: 1024px,
+  xl: 1200px,
+);
+
+@mixin min-xl {
+  @media screen and (min-width: #{breakpoints(xl)}) {
+    @content;
+  }
+}
+
+@mixin min-lg {
+  @media screen and (min-width: #{breakpoints(lg)}) {
+    @content;
+  }
+}
+
+@mixin min-md {
+  @media (min-width: #{breakpoints(md)}) {
+    @content;
+  }
+}
+
+@mixin min-sm {
+  @media (min-width: #{breakpoints(sm)}) {
+    @content;
+  }
+}
+
+@mixin min-xs {
+  @media screen and (min-width: #{breakpoints(xs)}) {
+    @content;
+  }
+}
+

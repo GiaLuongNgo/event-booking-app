@@ -1,0 +1,16 @@
+.alert {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 4px;
+}
+
+.error {
+  background-color: red;
+}
+
+.success {
+  background-color: green;
+}

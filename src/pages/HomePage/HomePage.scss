@@ -1,0 +1,42 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+
+  @include min-sm {
+    flex-direction: row;
+
+    .home-filter {
+      flex: 30
+    }
+
+    .home-content {
+      flex: 70
+    }
+  }
+
+  .home-filter {
+    padding: 0 1.5rem 1.5rem 0;
+  }
+
+  .home-content {
+    padding: 0 0 25px;
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding-bottom: 25px;
+
+      @include min-md {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}

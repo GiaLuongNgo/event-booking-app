@@ -1,0 +1,54 @@
+$skeleton-color: #e0e0e0;
+
+.app {
+  margin: 0;
+}
+
+.main-layout {
+  top: 5rem;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background-color: #007bff;
+  color: white;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  padding: 0.75rem 2rem;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: #007bff;
+  color: #007bff;
+  background-color: white;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: $skeleton-color;
+  }
+  50% {
+    background-color: #f5f5f5;
+  }
+  100% {
+    background-color: $skeleton-color;
+  }
+}

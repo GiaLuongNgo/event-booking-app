@@ -1,0 +1,42 @@
+.booking-screen {
+    display: flex;
+    flex-direction: column;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #cccccc;
+
+    .title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      font-style: italic;
+      color: #666666;
+    }
+
+    .error-text {
+      color: red;
+      font-size: 0.75rem;
+      margin: 0;
+    }
+  
+    .ticket-type-select {
+      margin: 0.5rem 0 1rem;
+    }
+  
+    .attendee-info-input {
+      margin: 0 0 1rem;
+    }
+  
+    .confirm-booking-button {
+      margin-top: 2rem;
+      width: 100%;
+      max-width: 280px;
+      align-self: center;
+    }
+  }
