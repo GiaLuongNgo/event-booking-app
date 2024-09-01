@@ -1,6 +1,9 @@
 import { IEvent } from '../types/index';
+
+// Ticket types for events
 export const ticketTypes = ['General Admission', 'VIP', 'Early Bird', 'Student', 'Senior'];
 
+// Mock data for events using Array.from method to create an array of 10 events
 export const mockEvents: IEvent[] = Array.from({ length: 10 }, (_, i) => ({
   id: (i + 1).toString(),
   title: `Event ${i + 1}`,
@@ -12,6 +15,8 @@ export const mockEvents: IEvent[] = Array.from({ length: 10 }, (_, i) => ({
   ticketTypes: ticketTypes.slice(0, Math.floor(i / 2) + 1),
 }));
 
+
+// Mock data for bookings using Array.from method to create an array of 5 bookings
 export const mockBookings = Array.from({ length: 5 }, (_, i) => ({
   id: (i + 1).toString(),
   eventId: (i + 1).toString(),
@@ -20,6 +25,7 @@ export const mockBookings = Array.from({ length: 5 }, (_, i) => ({
   userEmail: 'luong.ngogia1997@gmail.com'
 }))
 
+// Mock data for user
 export const mockUser = {
   userName: 'Louis Ngo',
   userEmail: 'luong.ngogia1997@gmail.com'

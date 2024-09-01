@@ -6,7 +6,7 @@ import { useEventBookingContext } from '@/contexts/EventBookingContext';
 
 const BookingDetail: React.FC = () => {
 
-  const { bookings, user } = useEventBookingContext();
+  const { bookings } = useEventBookingContext();
   const [booking, setBooking] = useState<IBooking>();
   const { bookingId } = useParams();
 
@@ -21,7 +21,7 @@ const BookingDetail: React.FC = () => {
 
   return (
     <div className="booking-detail">
-      <p> Hi <b>{user.userName}</b>,</p>
+      <p> Hi <b>{booking.userName}</b>,</p>
       <p> Thank you for using our booking service !</p>
       <p> Here is your booking detail:</p>
       <p className="event-name">name: <b>{booking?.title}</b></p>

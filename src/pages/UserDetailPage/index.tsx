@@ -3,6 +3,7 @@ import './UserDetail.scss';
 import { useEventBookingContext } from '@/contexts/EventBookingContext';
 
 const UserDetail: React.FC = () => {
+  // get user from context
   const { user } = useEventBookingContext();
 
   return(

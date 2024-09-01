@@ -5,6 +5,7 @@ import './BackButton.scss';
 const BackButton: React.FC = () => {
   const navigate = useNavigate();
 
+// handle click event to navigate back
   const handleClick = () => {
     navigate(-1);
   };

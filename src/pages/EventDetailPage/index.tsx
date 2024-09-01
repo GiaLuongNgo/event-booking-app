@@ -11,11 +11,13 @@ const EventDetail: React.FC = () => {
   const [event, setEvent] = useState<IEvent | null>(null);
   const { eventId } = useParams();
 
+  // find the event by eventId
   useEffect(() => {
     const foundEvent = events.find((event: IEvent) => event.id === eventId);
     setEvent(foundEvent || null);
   }, [eventId, events]);
 
+  // return when there is no event
   if (!event) {
     return <div>No event found</div>;
   }

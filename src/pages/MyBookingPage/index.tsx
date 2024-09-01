@@ -26,7 +26,7 @@ const MyBookingDetail: React.FC = () => {
     setBookingId(bookingId);
     openModal();
   }
-
+  // return when there is no booking
   if (!bookings.length) {
     return <div className="page">You have no bookings yet</div>
   }

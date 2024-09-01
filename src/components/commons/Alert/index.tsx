@@ -8,6 +8,7 @@ type AlertProps = {
 };
 
 const Alert: React.FC<AlertProps> = ({ message, onClose, type }) => {
+// using useEffect to close the alert after 3 seconds
   useEffect(() => {
     const timer = setTimeout(onClose, 3000);
     return () => clearTimeout(timer);

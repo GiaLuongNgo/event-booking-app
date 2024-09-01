@@ -7,6 +7,7 @@ type CommonContextType = {
   showAlert: (type: AlertType, message: string) => void;
 };
 
+// common context to handle some common functionalities like showing alerts
 export const CommonContext = createContext<CommonContextType>({ showAlert: () => { } });
 
 export const CommonProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -28,6 +29,7 @@ export const CommonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   );
 };
 
+// custom hook to use the common context
 export function useCommonContext() {
   const context = React.useContext(CommonContext);
   if (!context) {

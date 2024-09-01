@@ -11,7 +11,7 @@ $skeleton-color: #e0e0e0;
       margin-left: 4%;
     }
   }
-
+  // using skeleton loading animation and height auto + max-height for image to prevent layout shift
   .event-image {
     width: 100%;
     max-width: 600px;

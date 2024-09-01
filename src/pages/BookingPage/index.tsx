@@ -16,7 +16,10 @@ import { object, string } from 'yup';
 
 
 const BookingPage: React.FC = () => {
+
+  // Get the events, user, addBooking, bookings from EventBookingContext
   const { events, user, addBooking, bookings } = useEventBookingContext();
+  
   const [event, setEvent] = useState<IEvent | null>(null);
   const params = useParams();
   const navigate = useNavigate();
@@ -38,12 +41,14 @@ const BookingPage: React.FC = () => {
     schedule: '',
   };
 
+// Form validation schema using Yup
   const formValidationSchema = object({
     ticketType: string().required('Ticket type is required !'),
     userName: string().required('User name is required !'),
     userEmail: string().email('Invalid email !').required('User email is required !'),
   });
 
+// Formik form handling using useFormik hook
   const {
     handleSubmit,
     errors,

@@ -7,16 +7,20 @@ import { Link } from 'react-router-dom';
 import './HomePage.scss';
 
 const HomePage: React.FC = () => {
+// get events from context
   const { events } = useEventBookingContext();
   const [sort, setSort] = useState<'asc' | 'desc'>('asc');
   const [search, setSearch] = useState('');
 
+
+// sort events by date using the value from sort state
   const sortedEvents = [...events].sort((a, b) => {
     const dateA = new Date(a.date).getTime();
     const dateB = new Date(b.date).getTime();
     return sort === 'asc' ? dateA - dateB : dateB - dateA;
   });
 
+// filter events by location using the value from sort state and array filter method
   const filteredEvents = sortedEvents.filter((event) =>
     event.location.toLowerCase().includes(search.toLowerCase())
   );

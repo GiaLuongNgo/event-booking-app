@@ -13,6 +13,7 @@ $skeleton-color: #e0e0e0;
     text-align: left;
     cursor: pointer;
   
+  // using skeleton loading animation and min height for image to prevent layout shift
     &__image {
       width: 100%;
       border-top-left-radius: 10px;
