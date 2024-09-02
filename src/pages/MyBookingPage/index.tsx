@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './MyBookings.scss';
 import { useEventBookingContext } from '@/contexts/EventBookingContext';
 import { useNavigate } from 'react-router-dom';
@@ -11,7 +11,7 @@ const MyBookingDetail: React.FC = () => {
   const { bookings, cancelBooking } = useEventBookingContext();
   const navigate = useNavigate();
   const { isOpen, openModal, closeModal } = useModal();
-  const [bookingId, setBookingId] = React.useState('');
+  const [bookingId, setBookingId] = useState('');
 
   const onView = (bookingId: string) => {
     navigate(`/my-bookings/${bookingId}`);

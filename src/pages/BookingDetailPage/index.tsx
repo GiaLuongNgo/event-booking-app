@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import './BookingDetail.scss';
 import { IBooking } from '@/types';
 import { Link, useParams } from 'react-router-dom';
@@ -7,13 +7,9 @@ import { useEventBookingContext } from '@/contexts/EventBookingContext';
 const BookingDetail: React.FC = () => {
 
   const { bookings } = useEventBookingContext();
-  const [booking, setBooking] = useState<IBooking>();
   const { bookingId } = useParams();
 
-  useEffect(() => {
-    const foundBooking = bookings.find((event: IBooking) => event.id === bookingId);
-    setBooking(foundBooking);
-  }, [bookingId, booking]);
+  const booking = useMemo(() => bookings.find((booking) => booking.id === bookingId), [bookingId, bookings]) as IBooking;
 
   if (!booking?.id) {
     return <div>No results</div>

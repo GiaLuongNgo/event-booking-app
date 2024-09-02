@@ -12,7 +12,6 @@ const HomePage: React.FC = () => {
   const [sort, setSort] = useState<'asc' | 'desc'>('asc');
   const [search, setSearch] = useState('');
 
-
 // sort events by date using the value from sort state
   const sortedEvents = [...events].sort((a, b) => {
     const dateA = new Date(a.date).getTime();
@@ -25,8 +24,6 @@ const HomePage: React.FC = () => {
     event.location.toLowerCase().includes(search.toLowerCase())
   );
 
-  const eventCount = events.length;
-
   return (
     <div className='home-page'>
       <div className='home-filter'>
@@ -35,7 +32,7 @@ const HomePage: React.FC = () => {
       </div>
       <div className="home-content">
         <div className="home-content__header">
-          <h2 className="home-content__header__title">{eventCount} Upcoming Events</h2>
+          <h2 className="home-content__header__title">{events.length} Upcoming Events</h2>
           <SelectDate className="home-content__header__sort" value={sort} onChange={setSort} />
         </div>
         <section className="home-content__grid">

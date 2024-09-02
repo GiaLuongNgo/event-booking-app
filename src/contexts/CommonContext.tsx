@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 import Alert from '@/components/commons/Alert';
 
 type AlertType = 'success' | 'error' | '';
@@ -31,7 +31,7 @@ export const CommonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
 // custom hook to use the common context
 export function useCommonContext() {
-  const context = React.useContext(CommonContext);
+  const context = useContext(CommonContext);
   if (!context) {
     throw new Error('useCommonContext must be used within an CommonProvider');
   }

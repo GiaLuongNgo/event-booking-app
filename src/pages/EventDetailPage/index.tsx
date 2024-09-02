@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import { useEventBookingContext } from '@/contexts/EventBookingContext';
 import { IEvent } from '@/types';
 import './EventDetail.scss';
@@ -8,14 +8,9 @@ import BackButton from '@/components/commons/BackButton';
 
 const EventDetail: React.FC = () => {
   const { events } = useEventBookingContext();
-  const [event, setEvent] = useState<IEvent | null>(null);
   const { eventId } = useParams();
 
-  // find the event by eventId
-  useEffect(() => {
-    const foundEvent = events.find((event: IEvent) => event.id === eventId);
-    setEvent(foundEvent || null);
-  }, [eventId, events]);
+  const event = useMemo(() => events.find((event) => event.id === eventId), [eventId, events]) as IEvent;
 
   // return when there is no event
   if (!event) {

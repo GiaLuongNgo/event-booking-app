@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, createContext, useContext } from 'react';
 import { IEvent, IBooking, IUser } from '../types';
 import { mockEvents, mockUser } from '../mock';
 
@@ -12,12 +12,12 @@ interface EventBookingContextType {
 }
 
 // the global context for the app to manage events and bookings
-export const EventBookingContext = React.createContext<EventBookingContextType | undefined>(undefined);
+export const EventBookingContext = createContext<EventBookingContextType | undefined>(undefined);
 
 export const EventBookingProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [events, setEvents] = React.useState<IEvent[]>(mockEvents);
-  const [user] = React.useState<IUser>(mockUser);
-  const [bookings, setBookings] = React.useState<IBooking[]>([]); // State for bookings
+  const [events, setEvents] = useState<IEvent[]>(mockEvents);
+  const [user] = useState<IUser>(mockUser);
+  const [bookings, setBookings] = useState<IBooking[]>([]); // State for bookings
 
   // Function to add a booking
   const addBooking = (booking: IBooking) => {
@@ -47,7 +47,7 @@ export const EventBookingProvider: React.FC<{ children: React.ReactNode }> = ({ 
 
 // custom hook to use the event booking context
 export function useEventBookingContext() {
-  const context = React.useContext(EventBookingContext);
+  const context = useContext(EventBookingContext);
   if (!context) {
     throw new Error('useEventBookingContext must be used within an EventBookingProvider');
   }
